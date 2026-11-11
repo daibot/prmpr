@@ -2,7 +2,7 @@
 
 **An AI skill that works like an agency creative team.** Give it a brief and a mood board. It sets the bar, writes its own prompts, generates routes, critiques them against the brief, and hands you finished boards, model-ready prompts and Figma layouts.
 
-**Beta · v0.1 · Claude skill · MIT license** · Style library: [prmpr.com](https://preview.prmpr.com)
+**Beta · v0.2 · Claude skill · MIT license** · Style library: [prmpr.com](https://preview.prmpr.com)
 
 ![A storyboard route built by prompr in Figma](examples/auvelle-skincare/storyboard-route-2.png)
 
@@ -10,6 +10,7 @@
 
 - **Adcepts:** three concept routes (on brief, stretch, bold), each with a headline and alternates, key visual, layout, campaign extensions and format adaptations.
 - **Video storyboards:** frames with timing, shot, visual, sound, supers and transitions, a continuity sheet, plus still and video prompts for every shot (Midjourney, GPT Image, Gemini, Flux, Ideogram, Veo, Sora, Kling, Runway).
+- **Mood boards:** three distinct visual territories built from web image search, curated, with an extracted palette and a source link on every image. No image-generation credits spent.
 
 Banners, email and websites are next. Ask for them today and prompr will do the concept stage, which carries over to any tactic.
 
@@ -22,6 +23,14 @@ Banners, email and websites are next. Ask for them today and prompr will do the 
 5. **Go wide, then narrow.** Eight to twelve raw ideas, scored and cut to three named routes. It checks in before building.
 6. **Make, critique, revise.** It builds the work, scores it against the criteria, fixes what fails and tells you what still does not land.
 7. **Deliver.** A markdown job doc with routes, boards and prompts, and Figma boards if Figma is connected.
+
+## Mood boards
+
+Describe the look in words (adjectives, references, eras, places, things to avoid) or just give the brief. prompr writes three territories, turns each into concrete image searches, pulls the results, reviews them on one contact sheet per territory, keeps the 8 to 12 that agree, extracts a palette and lays the boards out in Figma or as a local HTML page. You pick a territory (or mix two) and it becomes the locked visual recipe.
+
+It works with no keys by using the AI's own web search. Image search keys make it faster and bigger: set any of `BRAVE_API_KEY`, `GOOGLE_CSE_KEY` + `GOOGLE_CSE_ID`, `PEXELS_API_KEY` or `UNSPLASH_ACCESS_KEY`. Search queries describe the look, never the client or product. The helper is `skill/prompr/scripts/moodboard.py` (Python 3.9+ and Pillow).
+
+**Mood boards are for internal reference only.** The images belong to their owners and keep their source links. You are responsible for how you use them, including any rights or licensing needed before anything goes into published or client-facing work.
 
 ## Use a look from prmpr.com
 
@@ -50,7 +59,7 @@ cp -r prompr/skill/prompr ~/.claude/skills/prompr
 
 **Claude apps:** zip the `skill/prompr` folder and upload it where your plan supports custom skills.
 
-**Other LLMs:** paste `skill/prompr/SKILL.md` and the files in `references/` into a new conversation, then send your brief.
+**Other LLMs:** paste `skill/prompr/SKILL.md` and the files in `references/` into a new conversation, then send your brief. Mood board building needs a host that can search the web and run Python; elsewhere prompr lists reference links instead.
 
 ## Figma
 
@@ -70,7 +79,7 @@ See the [Auvelle skincare test run](examples/auvelle-skincare/README.md): three 
 
 ## Status
 
-Beta. Tested in Claude Code with the Figma MCP server on one synthetic brief. Results vary by model, host and tools. Review all claims and copy before anything goes to a client. Feedback is welcome in [issues](https://github.com/daibot/prompr/issues); use synthetic or redacted examples only, never client-confidential material.
+Beta. Adcepts and storyboards tested in Claude Code with the Figma MCP server on one synthetic brief. Mood board search, curation, palette and HTML board tested with web search and no API keys; the keyed search APIs and the Figma mood board layout are not yet tested live. Results vary by model, host and tools. Review all claims and copy before anything goes to a client. Feedback is welcome in [issues](https://github.com/daibot/prompr/issues); use synthetic or redacted examples only, never client-confidential material.
 
 ## About
 

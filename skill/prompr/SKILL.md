@@ -4,12 +4,14 @@ description: >-
   Agency creative engine. Use when someone wants advertising work made from a
   brief, an objective or a mood board: adcepts (ad concepts, concept boards,
   campaign routes, key visuals with headlines) or video storyboards (TV, :06,
-  :15, :30, :60, social video, animatics, shot lists). Starts from the outcome
-  the work must drive, turns mood boards, screenshots or Figma files into a
-  visual recipe, writes its own prompts, critiques the work against the brief
-  and hands off image and video model prompts. It can read Figma files and
-  build boards in Figma. Use it even when the person only says "concepts",
-  "campaign ideas", "a board" or "storyboard this".
+  :15, :30, :60, social video, animatics, shot lists) and mood boards (built
+  by searching the web for reference images, not by generating them). Starts
+  from the outcome the work must drive, turns mood boards, screenshots or
+  Figma files into a visual recipe, writes its own prompts, critiques the work
+  against the brief and hands off image and video model prompts. It can read
+  Figma files and build boards in Figma. Use it even when the person only says
+  "concepts", "campaign ideas", "a board", "a mood board", "find references"
+  or "storyboard this".
 ---
 # prompr
 
@@ -18,6 +20,7 @@ Make agency work the way a good creative team does: outcome first, then idea, th
 Supported tactics in this version:
 - **Adcepts**: concept routes shown as key visual, headline and line. Read `references/adcepts.md`.
 - **Video storyboards**: frames, shots, VO, supers, timing, and prompts to render them. Read `references/storyboards.md`.
+- **Mood boards**: three visual territories assembled from web image search, with palettes and source links. Read `references/moodboard-builder.md`. Works on its own or as the first step of either tactic.
 
 If the person asks for another tactic (banners, email, website, social), say it is not built yet. Offer to do the concept stage (steps 1 to 5) for it, since that part carries over to any tactic.
 
@@ -27,6 +30,7 @@ Before asking anything, check which tools are available and adapt:
 - **Figma tools available** (`create_session`, `get_screenshot`, `use_figma`, and so on): you can read their files and build boards. Read `references/figma.md` before the first Figma call.
 - **No Figma**: ask for screenshots, exports, PDFs or links instead. Never block on Figma.
 - **Image or video generation tools available**: you can render. Otherwise deliver prompts they can paste into each model.
+- **Web search and a shell available**: you can build mood boards with `scripts/moodboard.py` (Python 3.9+ and Pillow). Image search API keys in the environment (`BRAVE_API_KEY`, `GOOGLE_CSE_KEY` + `GOOGLE_CSE_ID`, `PEXELS_API_KEY`, `UNSPLASH_ACCESS_KEY`) make it faster; without them, use your own web search. With no shell, search and list links with descriptions instead.
 
 Tell the person in one line what you can and cannot do in this session.
 
@@ -40,7 +44,7 @@ The brief must end up with: brand, the outcome (what someone should do or believ
 
 Read `references/moodboard.md`. Turn every reference (Figma frames, screenshots, URLs, brand guidelines, competitor work) into one **visual recipe** plus a **verbal tone**. Show the recipe back in a short block so they can correct it. The recipe locks the look for everything that follows.
 
-If there is no mood board, propose two or three distinct recipes that fit the brief and let them pick, or pick one and say why.
+If there is no mood board, offer to build one (`references/moodboard-builder.md`): three territories found by web search, so it costs no generation credits. If they want to move fast instead, propose two or three distinct recipes in words and let them pick, or pick one and say why.
 
 ## 3. Set the bar before making anything
 
@@ -93,6 +97,7 @@ If Figma is connected and they want it, build the boards in Figma (see `referenc
 - **Outcome over output.** Every idea must point back to the outcome. If an idea is cool but does not serve it, cut it or flag it as a wildcard.
 - **Real type, not baked type.** Headlines, supers and legal copy are set as live text (Figma or layout spec), not rendered inside generated images, unless they ask for a full comp. Generate visuals without text.
 - **Respect mandatories and regulated categories.** In pharma, healthcare, finance and alcohol, never invent claims, stats or efficacy. Mark any claim "needs substantiation" and leave room for required copy (ISI, fair balance, disclaimers).
-- **Client confidentiality.** Treat brief, Figma and brand material as confidential. Do not send it to outside services (image generators, search) without the person's okay.
+- **Client confidentiality.** Treat brief, Figma and brand material as confidential. Do not send it to outside services (image generators, search) without the person's okay. Search queries describe the look, never the client, product or campaign.
+- **Mood boards are internal reference.** The first time you deliver one, tell the person the images belong to their owners and that they are responsible for how they use them, including rights or licensing before anything goes into published or client-facing work. Keep every source link.
 - **No living-artist imitation.** Describe a look by its qualities (palette, lens, grain, composition), not "in the style of" a living artist or photographer. Brand references are fine as mood, not as copies.
 - **Use the person's language.** Match the agency's terms (adcept, key visual, route, territory, animatic) and keep copy in the brand's voice, not the model's.
