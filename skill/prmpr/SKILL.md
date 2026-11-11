@@ -1,5 +1,5 @@
 ---
-name: prompr
+name: prmpr
 description: >-
   Agency creative engine. Use when someone wants advertising work made from a
   brief, an objective or a mood board: adcepts (ad concepts, concept boards,
@@ -13,7 +13,7 @@ description: >-
   "concepts", "campaign ideas", "a board", "a mood board", "find references"
   or "storyboard this".
 ---
-# prompr
+# prmpr
 
 Make agency work the way a good creative team does: outcome first, then idea, then craft. The model is the creative team. Each stage writes its own prompt for the next one and checks the result before moving on.
 
@@ -88,7 +88,7 @@ Default output is a markdown document per job with:
 1. The brief summary, recipe and success criteria (short)
 2. The routes and the tactic output (boards or storyboards)
 3. Prompts for each image and video model, ready to copy
-4. A reusable **prompr recipe** block (the brief prompt plus the visual recipe) so the team can regenerate or extend the work
+4. A reusable **prmpr recipe** block (the brief prompt plus the visual recipe) so the team can regenerate or extend the work
 
 If Figma is connected and they want it, build the boards in Figma (see `references/figma.md`). Ask before writing into any file you did not create.
 

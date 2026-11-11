@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""prompr mood board builder: search free image sources, download small previews, curate, assemble.
+"""prmpr mood board builder: search free image sources, download small previews, curate, assemble.
 
 Search is cheap; generation is not. This script finds reference images on the web so a board
 costs no image-generation credits. Every image keeps its source link so the team can trace it.
@@ -44,7 +44,7 @@ try:
 except ImportError:
     sys.exit("Pillow is required: pip install Pillow")
 
-UA = "prompr-moodboard/0.1 (+https://github.com/daibot/prompr)"
+UA = "prmpr-moodboard/0.1 (+https://github.com/daibot/prmpr)"
 THUMB_W = 640
 
 
@@ -133,7 +133,7 @@ def unsplash(q, n):
     for p in d.get("results", []):
         out.append({"provider": "unsplash", "thumb": p["urls"]["small"], "creator": p["user"]["name"],
                     "license": "Unsplash License", "license_url": "https://unsplash.com/license",
-                    "source_url": p["links"]["html"] + "?utm_source=prompr&utm_medium=referral",
+                    "source_url": p["links"]["html"] + "?utm_source=prmpr&utm_medium=referral",
                     "title": p.get("alt_description") or "", "_ping": p["links"].get("download_location"), "_key": key})
     return out
 

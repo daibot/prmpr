@@ -74,7 +74,7 @@ This copies the keepers and extracts a palette from them.
 
 ## 5. Assemble
 
-- **Figma connected:** build one board per territory on a page named `prompr / <job> / mood boards`. See "Mood boards" in `figma.md`.
+- **Figma connected:** build one board per territory on a page named `prmpr / <job> / mood boards`. See "Mood boards" in `figma.md`.
 - **No Figma:** `python3 <skill>/scripts/moodboard.py html <job>/boards` writes `boards.html`, a local page with every board, palette, keywords and source links. Offer to open it.
 - **Neither:** a markdown summary per territory with the kept image links.
 

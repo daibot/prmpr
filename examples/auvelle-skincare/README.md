@@ -1,6 +1,6 @@
 # Auvelle Serum Nº 1: 10s social storyboards
 
-prompr v1 · 3 routes · 9:16 · 10 seconds · 4 frames max · built in Figma with the Figma MCP
+prmpr v1 · 3 routes · 9:16 · 10 seconds · 4 frames max · built in Figma with the Figma MCP
 
 Synthetic test run. Auvelle is a made-up brand; the frames are rough local SDXL renders.
 
@@ -177,8 +177,8 @@ a small frosted glass serum bottle with a dark oxblood red dropper cap lying alo
 luxury product packshot of a small frosted glass serum bottle with a dark oxblood red dropper cap standing alone in the lower half of the frame on a seamless bone white background, soft shadow, soft diffused side light, fine film grain, generous empty space above --ar 9:16 --style raw --v 7
 ```
 
-## prompr recipe (rerun or extend)
-Paste the self-prompt above with the Quiet Ritual recipe into prompr or any LLM. To extend: add a :06 cutdown (frames 1 and 4 of any route), a 1:1 feed version, or adcepts that share the same supers.
+## prmpr recipe (rerun or extend)
+Paste the self-prompt above with the Quiet Ritual recipe into prmpr or any LLM. To extend: add a :06 cutdown (frames 1 and 4 of any route), a 1:1 feed version, or adcepts that share the same supers.
 
 ---
 

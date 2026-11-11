@@ -21,10 +21,10 @@ Use Figma when its tools are available. If they are not, ask for screenshots or 
 Load the Figma plugin's `figma-use` skill (or the MCP resource `skill://figma/figma-use/SKILL.md`) before calling `use_figma`. For bigger layouts, `figma-generate-design` also helps. Let those skills handle the Figma mechanics. This skill decides what goes on the board.
 
 Default build:
-- **Where**: a new page named `prompr / <job> / <date>` in a file they chose, or a new file via `create_new_file`. Never edit their existing frames unless they ask.
+- **Where**: a new page named `prmpr / <job> / <date>` in a file they chose, or a new file via `create_new_file`. Never edit their existing frames unless they ask.
 - **Adcepts**: see the layout in `adcepts.md`. Live text layers for the headline, body, tagline and CTA, using the brand's fonts and colour variables when they exist. The image is a placeholder rectangle with the key visual prompt in a notes text layer, or the generated image if one exists.
 - **Storyboards**: see the layout in `storyboards.md`. Frames on a grid with auto layout, captions as live text.
-- **Mood boards**: one frame per territory, 1920 wide, on a page named `prompr / <job> / mood boards`. Header with territory name, line and keywords as live text, and the palette as swatches (create colour variables only if the territory is chosen). Images in a masonry or grid layout with a small source caption under each (domain, linked). Upload kept images from `<job>/boards/<territory>/kept/` with `upload_assets`, then apply each `imageHash` to its frame. Add the usage notice as a text layer at the top of the page.
+- **Mood boards**: one frame per territory, 1920 wide, on a page named `prmpr / <job> / mood boards`. Header with territory name, line and keywords as live text, and the palette as swatches (create colour variables only if the territory is chosen). Images in a masonry or grid layout with a small source caption under each (domain, linked). Upload kept images from `<job>/boards/<territory>/kept/` with `upload_assets`, then apply each `imageHash` to its frame. Add the usage notice as a text layer at the top of the page.
 - Name every layer clearly (`R1 / Exec 1 / Headline`) so the team can take over.
 
 ## AI features inside Figma
